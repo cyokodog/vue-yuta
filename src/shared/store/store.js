@@ -1,14 +1,15 @@
-import { Auth } from './shared/models/auth/auth'
+import { Auth } from '../models/auth/auth'
+import { db, prepareDb, addPerformance } from '../models/performance/definitions'
+import makeDummyData from '../models/performance/makeDummyData'
 
 const state = {
-  dummy: 'fuga',
   firebaseAuth: firebase.auth(),
-  auth: Auth.unspecified()
-
+  auth: Auth.unspecified(),
+  db
 }
 
 const mutations = {
-  signIn () {
+  signIn (state) {
     const authProvider = new firebase.auth.GoogleAuthProvider()
     state.firebaseAuth.onAuthStateChanged(user => {
       if (user) {
@@ -18,14 +19,23 @@ const mutations = {
       state.firebaseAuth.signInWithRedirect(authProvider)
     })
   },
-  signOut () {
+  signOut (state) {
     state.auth = Auth.unspecified()
     state.firebaseAuth.signOut()
   },
 
-  foo (state, bar) {
+  prepareDb (state) {
+    prepareDb(state)
+  },
 
+  addPerformance (state, param) {
+    addPerformance(state, param)
+  },
+
+  makeDummyData (state) {
+    makeDummyData(state)
   }
+
 }
 
 export default {

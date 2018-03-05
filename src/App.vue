@@ -1,46 +1,54 @@
 <template>
-  <div id="app">
-    <div
-      v-if="auth.isAuthed"
-    >
+
+<div>
+  <div v-if="auth.isAuthed">
+
+<div class="st-Header">
+<div class="st-Header_Container">
+
+<div class="hd-TitleArea">
+  <div class="hd-TitleArea_Title"><h1><a href="/">Yuta Be Good!</a></h1><span class="hd-TitleArea_SnsIcons"></span></div>
+  <div class="hd-TitleArea_SubTitle">His Performance Manager</div>
+  <div class="hd-TitleArea_Eyecatch">
+    <div v-if="auth.isAuthed">
       <account
         :auth="auth"
       ></account>
     </div>
     <div v-else>Logging in...</div>
-
-
-    <img src="./assets/logo.png">
-    <router-view/>
   </div>
+</div>
+
+</div>
+</div>
+
+<router-view/>
+
+<footer class="st-Footer">
+<div class="st-Footer_Container">
+<h3 class="st-Footer_SectionTitle">Another Month</h3>
+<ul>
+<li><a href="/public/angular">2018/02</a></li>
+<li><a href="/public/angular">2018/01</a></li>
+<li><a href="/public/angular">2017/12</a></li>
+</ul>
+</div>
+</footer>
+
+  </div>
+  <div v-else>Logging in...</div>
+</div>
+
 </template>
 
-<script>
-import Account from './components/account/Account'
-
-export default {
-  name: 'App',
-  components: {
-    Account
-  },
-  computed: {
-    auth () {
-      return this.$store.state.auth
-    }
-  },
-  mounted () {
-    this.$store.commit('signIn')
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+@import "./assets/scss/vendor/_media-queries";
+@import "./assets/scss/vendor/_modern-normalize";
+@import "./assets/scss/_vars";
+@import "./assets/scss/_reset.scss";
+@import "./assets/scss/_structure.scss";
 </style>
+
+<script>
+export default require('./App.js')
+</script>

@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 
 import Vuex from 'vuex'
-import _store from './store'
+import _store from './shared/store/store.js'
 
 Vue.config.productionTip = false
 
