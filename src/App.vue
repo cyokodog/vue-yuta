@@ -28,9 +28,9 @@
 <div class="st-Footer_Container">
 <h3 class="st-Footer_SectionTitle">Another Month</h3>
 <ul>
-<li><a href="/public/angular">2018/02</a></li>
-<li><a href="/public/angular">2018/01</a></li>
-<li><a href="/public/angular">2017/12</a></li>
+<li><a href="#">2018/02</a></li>
+<li><a href="#">2018/01</a></li>
+<li><a href="#">2017/12</a></li>
 </ul>
 </div>
 </footer>
