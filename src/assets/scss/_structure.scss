@@ -27,7 +27,7 @@
 .hd-TitleArea {
   margin: 16px 0;
   display: grid;
-  grid-template-columns: 1fr 60px;
+  grid-template-columns: 1fr 200px;
   xgrid-template-rows:  1fr 70%;
   &_Eyecatch {
     xpadding: 16px;
@@ -41,7 +41,6 @@
 
 
     img {
-      width: 100%;
       width: 50px;
       border-radius: 50%;
 
