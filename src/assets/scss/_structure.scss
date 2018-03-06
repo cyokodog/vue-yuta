@@ -150,7 +150,7 @@
     xpadding: 0;
     @include pc-container() {
       xpadding: 0;
-      grid-template-columns: 60% 1fr;
+      grid-template-columns: 50% 1fr;
     }
   }
   &_Item {
