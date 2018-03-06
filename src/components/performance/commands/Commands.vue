@@ -1,5 +1,5 @@
 <template>
-  <form @submit="onAddPerformance" v-if="performanceNames">
+  <form @submit="onAddPerformance($event)" v-if="performanceNames">
     <input
       ref="newPerformance"
       v-model="field.newPerformance"

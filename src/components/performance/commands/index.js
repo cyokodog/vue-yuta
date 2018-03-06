@@ -22,14 +22,16 @@ export default {
   },
 
   methods: {
-    onAddPerformance () {
+    onAddPerformance (ev) {
       this.$store.commit('addPerformance', {
         name: this.field.newPerformance,
         type: this.type
       })
       this.field.newPerformance = ''
       this.isAddFieldFocused = false
-      return false
+      if (event) {
+        event.preventDefault()
+      }
     },
     onFocusAddField () {
       this.isAddFieldFocused = true
