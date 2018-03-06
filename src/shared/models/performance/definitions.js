@@ -107,7 +107,14 @@ const getMonthlySummary = (rawItems, type) => {
     itemMap.set(item.name, valueMap)
   })
 
-  const categories = Array.from(itemMap.keys()) || []
+  // カウントが多い順にソート
+  const categories = Array.from(itemMap.keys()).sort((key1, key2) => {
+    const getCount = (key) => {
+      return Array.from(itemMap.get(key).entries()).reduce((sum, item) => sum + item[1], 0)
+    }
+    return getCount(key1) > getCount(key2) ? -1 : 1
+  })
+
   const seriesMap = new Map()
   categories.forEach(category => {
     const valueMap = itemMap.get(category)
