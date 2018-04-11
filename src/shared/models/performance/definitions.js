@@ -66,7 +66,9 @@ const getRecentlyActions = (rawItems, type) => {
   items.forEach(item => {
     const dateKey = moment(item.date, 'YYYY/MM/DD').startOf('month').format('YYYY/MM')
     const tmp = itemMap.get(dateKey)
-    tmp.push(item)
+    if (tmp) {
+      tmp.push(item)
+    }
   })
 
   const recently = []
