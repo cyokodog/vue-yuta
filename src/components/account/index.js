@@ -1,11 +1,12 @@
 export default {
   name: 'account',
   props: {
-    auth: Object
+    auth: null,
+    signOut: null
   },
   methods: {
     onChangeUser () {
-      this.$store.commit('signOut')
+      this.signOut()
     }
   }
 }

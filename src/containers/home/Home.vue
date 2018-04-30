@@ -15,9 +15,12 @@
       v-if="performances.isReady"
       :type="'bad'"
       :performanceNames="performances.summary.bad.categories"
+      :addPerformance="addPerformance"
     ></Commands>
-    <PerformanceRecently :type="'bad'"></PerformanceRecently>
-
+    <PerformanceRecently
+      :type="'bad'"
+      :performances="performances"
+    ></PerformanceRecently>
   </div>
   <div class="st-Chart_Item">
 
@@ -34,7 +37,10 @@
       :type="'good'"
       :performanceNames="performances.summary.good.categories"
      ></Commands>
-    <PerformanceRecently :type="'good'"></PerformanceRecently>
+    <PerformanceRecently
+      :type="'good'"
+      :performances="performances"
+    ></PerformanceRecently>
   </div>
 
 </div>

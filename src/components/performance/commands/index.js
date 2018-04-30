@@ -2,7 +2,8 @@ export default {
   name: 'Commands',
   props: {
     type: '',
-    performanceNames: ''
+    performanceNames: '',
+    addPerformance: ''
   },
   data () {
     return {
@@ -23,15 +24,13 @@ export default {
 
   methods: {
     onAddPerformance (ev) {
-      this.$store.commit('addPerformance', {
+      this.addPerformance({
         name: this.field.newPerformance,
         type: this.type
       })
       this.field.newPerformance = ''
       this.isAddFieldFocused = false
-      if (event) {
-        event.preventDefault()
-      }
+      ev.preventDefault()
     },
     onFocusAddField () {
       this.isAddFieldFocused = true
@@ -41,8 +40,8 @@ export default {
         this.isAddFieldFocused = false
       }, 100)
     },
-    onClickAddActionName (e) {
-      this.field.newPerformance = e.target.innerText
+    onClickAddActionName (ev) {
+      this.field.newPerformance = ev.target.innerText
       this.$refs.newPerformance.focus()
     }
   }
