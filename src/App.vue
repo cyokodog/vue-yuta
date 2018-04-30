@@ -13,6 +13,7 @@
     <div v-if="auth.isAuthed">
       <account
         :auth="auth"
+        :signOut="signOut"
       ></account>
     </div>
     <div v-else>Logging in...</div>
@@ -50,25 +51,32 @@
 </style>
 
 <script>
-import Account from './components/account/Account'
+// import { mapMutations } from 'vuex';
+// import Account from './components/account/Account'
+export default require('./index.js')
 
-export default {
-  name: 'App',
-  components: {
-    Account
-  },
-  computed: {
-    auth () {
-      return this.$store.state.auth
-    },
-    performances () {
-      return this.$store.state.db.performances
-    }
-  },
-  mounted () {
-    this.$store.commit('signIn')
-    this.$store.commit('prepareDb')
-    // this.$store.commit('makeDummyData')
-  }
-}
+// export default {
+//   name: 'App',
+//   components: {
+//     Account
+//   },
+//   computed: {
+//     accountMutations () {
+//       return mapMutations({
+//         signOut: 'signOut'
+//       })
+//     },
+//     auth () {
+//       return this.$store.state.auth
+//     },
+//     performances () {
+//       return this.$store.state.db.performances
+//     }
+//   },
+//   mounted () {
+//     this.$store.commit('signIn')
+//     this.$store.commit('prepareDb')
+//     // this.$store.commit('makeDummyData')
+//   }
+// }
 </script>

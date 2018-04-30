@@ -3,12 +3,9 @@ import { chartColors } from '../../../shared/models/performance/definitions'
 export default {
   name: 'PerformanceRecently',
   props: {
-    type: ''
-  },
-  computed: {
-    performances () {
-      return this.$store.state.db.performances
-    }
+    type: '',
+    performanceNames: '',
+    performances: ''
   },
   methods: {
     countStyle (idx) {
@@ -20,7 +17,6 @@ export default {
       }
       return {
         background: chartColors[this.type],
-        // background: '#000',
         color: '#fff'
       }
     }

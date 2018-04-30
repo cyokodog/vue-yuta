@@ -2,7 +2,8 @@ export default {
   name: 'Commands',
   props: {
     type: '',
-    performanceNames: ''
+    performanceNames: '',
+    addPerformance: ''
   },
   data () {
     return {
@@ -23,10 +24,14 @@ export default {
 
   methods: {
     onAddPerformance (ev) {
-      this.$store.commit('addPerformance', {
+      this.addPerformance('addPerformance', {
         name: this.field.newPerformance,
         type: this.type
       })
+      // this.$store.commit('addPerformance', {
+      //   name: this.field.newPerformance,
+      //   type: this.type
+      // })
       this.field.newPerformance = ''
       this.isAddFieldFocused = false
       if (event) {
