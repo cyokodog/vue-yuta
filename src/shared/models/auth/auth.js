@@ -4,7 +4,7 @@ export class Auth {
   }
 
   constructor (user) {
-    this.user = user
+    this.user = user // firebaseAuthUser
   }
 
   get isAuthed () {

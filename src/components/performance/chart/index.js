@@ -29,7 +29,6 @@ export default {
     drawChart () {
       const target = document.querySelector(`.${this.areaClass}`)
       const params = getChartParams(this.chartData.categories, this.chartData.series)
-
       Highcharts.chart(target, params)
     }
   }

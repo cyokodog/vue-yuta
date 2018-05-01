@@ -4,7 +4,6 @@ export default {
   name: 'PerformanceRecently',
   props: {
     type: '',
-    performanceNames: '',
     performances: ''
   },
   methods: {

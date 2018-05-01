@@ -1,26 +1,29 @@
-import { mapMutations } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 import Account from './components/account/Account'
 
 export default {
   name: 'App',
+
   components: {
     Account
   },
+
   computed: {
-    auth () {
-      return this.$store.state.auth
-    },
-    performances () {
-      return this.$store.state.db.performances
-    }
+    ...mapState('system', [
+      'auth'
+    ])
   },
+
   methods: {
-    ...mapMutations([
+    ...mapMutations('system', [
       'signIn',
-      'signOut',
+      'signOut'
+    ]),
+    ...mapMutations('performances', [
       'prepareDb'
     ])
   },
+
   mounted () {
     this.signIn()
     this.prepareDb()

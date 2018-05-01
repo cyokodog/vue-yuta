@@ -1,25 +1,19 @@
 <template>
-
 <div>
   <div v-if="auth.isAuthed">
 
 <div class="st-Header">
 <div class="st-Header_Container">
-
 <div class="hd-TitleArea">
   <div class="hd-TitleArea_Title"><h1><a href="/">Yuta Be Good!</a></h1><span class="hd-TitleArea_SnsIcons"></span></div>
   <div class="hd-TitleArea_SubTitle">His Performance Manager</div>
   <div class="hd-TitleArea_Eyecatch">
-    <div v-if="auth.isAuthed">
-      <account
-        :auth="auth"
-        :signOut="signOut"
-      ></account>
-    </div>
-    <div v-else>Logging in...</div>
+    <account
+      :auth="auth"
+      :signOut="signOut"
+    ></account>
   </div>
 </div>
-
 </div>
 </div>
 
@@ -39,7 +33,6 @@
   </div>
   <div v-else>Logging in...</div>
 </div>
-
 </template>
 
 <style lang="sass">
@@ -51,32 +44,5 @@
 </style>
 
 <script>
-// import { mapMutations } from 'vuex';
-// import Account from './components/account/Account'
-export default require('./index.js')
-
-// export default {
-//   name: 'App',
-//   components: {
-//     Account
-//   },
-//   computed: {
-//     accountMutations () {
-//       return mapMutations({
-//         signOut: 'signOut'
-//       })
-//     },
-//     auth () {
-//       return this.$store.state.auth
-//     },
-//     performances () {
-//       return this.$store.state.db.performances
-//     }
-//   },
-//   mounted () {
-//     this.$store.commit('signIn')
-//     this.$store.commit('prepareDb')
-//     // this.$store.commit('makeDummyData')
-//   }
-// }
+export default require('./index')
 </script>

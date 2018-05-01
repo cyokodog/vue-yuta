@@ -1,4 +1,4 @@
-import { mapMutations } from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
 
 import Commands from '../../components/performance/commands/Commands.vue'
 import PerformanceChart from '../../components/performance/chart/Chart.vue'
@@ -12,14 +12,13 @@ export default {
     PerformanceRecently
   },
   computed: {
-    performances () {
-      return this.$store.state.db.performances
-    }
+    ...mapGetters('performances', [
+      'performances'
+    ])
   },
   methods: {
-    ...mapMutations([
+    ...mapMutations('performances', [
       'addPerformance'
     ])
   }
-
 }

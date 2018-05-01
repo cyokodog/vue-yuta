@@ -14,5 +14,5 @@
 </style>
 
 <script>
-export default require('./index.js')
+export default require('./')
 </script>

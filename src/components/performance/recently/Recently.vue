@@ -4,7 +4,7 @@
       v-for="(item, idx) in performances.recently[type]"
       :key="item.name"
     >
-      <h3>{{item.name}} Action <span class="count" v-bind:style="countStyle(idx)">{{item.actions.length}}</span></h3>
+      <h3>{{item.name}} Action <span class="count" :style="countStyle(idx)">{{item.actions.length}}</span></h3>
       <ul>
         <li
           v-for="(action, idx) in item.actions" :key="idx"
@@ -26,5 +26,5 @@
 </style>
 
 <script>
-export default require('./index.js')
+export default require('./')
 </script>
